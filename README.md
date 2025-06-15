@@ -89,6 +89,10 @@ github-activity-timeline/
 │           ├── et.svg
 │           ├── ja.svg
 │           └── ar.svg
+├─── LICENSE                   # Project license
+├─── README.md                 # Project documentation
+├─── logos/
+│    └── Logo - MaxDev - White - Cover.png    # MaxDev logo
 └── README.md
 ```
 

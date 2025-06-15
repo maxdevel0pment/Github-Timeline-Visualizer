@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>GitHub Timeline | MaxDev</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./assets/img/logos/Logo - MaxDev - White - Cover.png">
+    <meta name="description" content="GitHub Activity Timeline Visualizer - Visualize GitHub commit activity over time">
+    <meta name="keywords" content="github, activity, timeline, commits, visualization, developer, statistics">
+    <meta name="author" content="MaxDev">
+    <meta property="og:title" content="GitHub Activity Timeline Visualizer">
+    <meta property="og:description" content="Interactive GitHub commit activity visualization">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<div class="language-selector">
+    <div class="language-dropdown">
+        <button class="language-btn" id="languageBtn" aria-label="Select Language" aria-expanded="false">
+            <img src="./assets/img/flags/en.svg" alt="English" class="flag-icon">
+            <span>English</span>
+            <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="language-menu" id="languageMenu" role="menu">
+            <div class="language-option active" data-lang="en" role="menuitem" tabindex="0">
+                <img src="./assets/img/flags/en.svg" alt="English" class="flag-icon">
+                <span>English</span>
+            </div>
+            <div class="language-option" data-lang="de" role="menuitem" tabindex="0">
+                <img src="./assets/img/flags/de.svg" alt="German" class="flag-icon">
+                <span>Deutsch</span>
+            </div>
+            <div class="language-option" data-lang="zh" role="menuitem" tabindex="0">
+                <img src="./assets/img/flags/zh.svg" alt="Chinese" class="flag-icon">
+                <span>中文</span>
+            </div>
+            <div class="language-option" data-lang="ru" role="menuitem" tabindex="0">
+                <img src="./assets/img/flags/ru.svg" alt="Russian" class="flag-icon">
+                <span>Русский</span>
+            </div>
+            <div class="language-option" data-lang="et" role="menuitem" tabindex="0">
+                <img src="./assets/img/flags/et.svg" alt="Estonian" class="flag-icon">
+                <span>Eesti</span>
+            </div>
+            <div class="language-option" data-lang="ja" role="menuitem" tabindex="0">
+                <img src="./assets/img/flags/ja.svg" alt="Japanese" class="flag-icon">
+                <span>日本語</span>
+            </div>
+            <div class="language-option" data-lang="ar" role="menuitem" tabindex="0">
+                <img src="./assets/img/flags/ar.svg" alt="Arabic" class="flag-icon">
+                <span>العربية</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="github-badge">
+    <div class="badge-content">
+        <i class="fab fa-github"></i>
+        <span data-translate="github_timeline">GitHub Timeline Visualizer</span>
+    </div>
+</div>
+
+<div class="dashboard">
+    <div class="main-content">
+        <div class="overview-content">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1 data-translate="welcome_title">GitHub Activity Timeline</h1>
+                    <p data-translate="welcome_subtitle">Visualize GitHub commit activity and discover patterns in your coding journey</p>
+                    <div class="search-container">
+                        <div class="input-group">
+                            <input type="text" id="usernameInput" data-translate-placeholder="username_placeholder" placeholder="Enter GitHub username..." class="username-input">
+                            <button id="analyzeBtn" class="analyze-btn">
+                                <i class="fas fa-search"></i>
+                                <span data-translate="analyze_btn">Analyze</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="code-animation">
+                        <i class="fab fa-github"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-section" id="statsSection" style="display: none;">
+                <h3 data-translate="activity_stats">Activity Statistics</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4 data-translate="total_commits">Total Commits</h4>
+                            <span class="stat-number" id="totalCommits">-</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4 data-translate="most_active_month">Most Active Month</h4>
+                            <span class="stat-number" id="mostActiveMonth">-</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4 data-translate="longest_streak">Longest Streak</h4>
+                            <span class="stat-number" id="longestStreak">- days</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4 data-translate="avg_commits_day">Avg Commits/Day</h4>
+                            <span class="stat-number" id="avgCommits">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-section" id="timelineSection" style="display: none;">
+                <h3 data-translate="activity_timeline">Activity Timeline</h3>
+                <div class="timeline-controls">
+                    <div class="time-period-selector">
+                        <button class="period-btn" data-period="year" data-translate="year_btn">Year</button>
+                        <button class="period-btn active" data-period="month" data-translate="month_btn">Month</button>
+                        <button class="period-btn" data-period="week" data-translate="week_btn">Week</button>
+                    </div>
+                </div>
+                <div class="timeline-container">
+                    <canvas id="timelineChart" width="800" height="400"></canvas>
+                </div>
+            </div>
+
+            <div class="heatmap-section" id="heatmapSection" style="display: none;">
+                <h3 data-translate="commit_heatmap">Commit Heatmap</h3>
+                <div class="heatmap-container">
+                    <div class="heatmap-grid" id="heatmapGrid"></div>
+                    <div class="heatmap-legend">
+                        <span data-translate="less">Less</span>
+                        <div class="legend-colors">
+                            <div class="legend-color" data-level="0"></div>
+                            <div class="legend-color" data-level="1"></div>
+                            <div class="legend-color" data-level="2"></div>
+                            <div class="legend-color" data-level="3"></div>
+                            <div class="legend-color" data-level="4"></div>
+                        </div>
+                        <span data-translate="more">More</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="repositories-section" id="repositoriesSection" style="display: none;">
+                <h3 data-translate="most_active_repos">Most Active Repositories</h3>
+                <div class="repositories-grid" id="repositoriesGrid"></div>
+            </div>
+
+            <div class="loading-section" id="loadingSection" style="display: none;">
+                <div class="loading-animation">
+                    <div class="loading-spinner"></div>
+                    <p data-translate="loading_data">Loading GitHub data...</p>
+                </div>
+            </div>
+
+            <div class="error-section" id="errorSection" style="display: none;">
+                <div class="error-content">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3 data-translate="error_title">Error</h3>
+                    <p id="errorMessage"></p>
+                    <button id="retryBtn" class="retry-btn" data-translate="try_again">Try Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./assets/js/script.js"></script>
+</body>
+</html>
