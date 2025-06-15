@@ -219,7 +219,7 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) file for 
 **MaxDev** - [@maxdevel0pement](https://github.com/maxdevel0pement)
 
 - 💼 Portfolio: [MaxDev About Me](maxdevelopement.me)
-- 📫 Email: askmaxai@gmail.com
+- 📫 Email: contact@maxdevelopement.me
 - 💬 Discord: @maxdevelopement
 
 ## 🙏 Acknowledgments
