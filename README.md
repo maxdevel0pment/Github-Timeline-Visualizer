@@ -1,4 +1,3 @@
-```markdown name=README.md
 # GitHub Activity Timeline Visualizer
 
 An interactive web application for visualizing GitHub commit activities with temporal patterns and statistics.
