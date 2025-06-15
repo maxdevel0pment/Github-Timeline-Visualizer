@@ -253,4 +253,3 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) file for 
 ⭐ **If you like this project, give it a star!** ⭐
 
 Made with ❤️ by [MaxDev](https://github.com/maxdevel0pement)
-```
