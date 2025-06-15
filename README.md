@@ -33,7 +33,7 @@ An interactive web application for visualizing GitHub commit activities with tem
 
 ## 🚀 Live Demo
 
-Try the app directly: [GitHub Activity Timeline Visualizer](#)
+Try the app directly: [GitHub Activity Timeline Visualizer](timeline.maxdevelopement.me)
 
 ## 🛠️ Technologies
 
