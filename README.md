@@ -52,8 +52,8 @@ Try the app directly: [GitHub Activity Timeline Visualizer](https://timeline.max
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/maxdevel0pement/github-activity-timeline.git
-   cd github-activity-timeline
+   git clone https://github.com/maxdevel0pment/Github-Timeline-Visualizer.git
+   cd Github-Timeline-Visualizer
    ```
 
 2. **Serve the files**
@@ -107,7 +107,7 @@ github-activity-timeline/
    - Browse repository list for project insights
 
 ### 🔍 Example Usernames to Test
-- `maxdevel0pement` - Creator of this project
+- `maxdevel0pment` - Creator of this project
 - `octocat` - GitHub's mascot
 - `torvalds` - Creator of Linux
 - `gaearon` - React developer
@@ -216,11 +216,11 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) file for 
 
 ## 👨‍💻 Author
 
-**MaxDev** - [@maxdevel0pement](https://github.com/maxdevel0pement)
+**MaxDev** - [@maxdevel0pement](https://github.com/maxdevel0pment)
 
 - 💼 Portfolio: [MaxDev About Me](maxdevelopement.me)
 - 📫 Email: contact@maxdevelopement.me
-- 💬 Discord: @maxdevelopement
+- 💬 Discord: @maxdevel0pment
 
 ## 🙏 Acknowledgments
 
@@ -256,4 +256,4 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) file for 
 
 ⭐ **If you like this project, give it a star!** ⭐
 
-Made with ❤️ by [MaxDev](https://github.com/maxdevel0pement)
+Made with ❤️ by [MaxDev](https://github.com/maxdevel0pment)
