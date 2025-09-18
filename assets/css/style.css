@@ -479,16 +479,20 @@ body {
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 20px;
+    overflow-x: auto;
+    max-width: 100%;
 }
 
 .heatmap-week {
-    display: flex;
+    display: inline-flex;
+    flex-direction: column;
     gap: 3px;
-    margin-bottom: 3px;
+    margin-right: 3px;
 }
 
 [lang="ar"] .heatmap-week {
-    flex-direction: row-reverse;
+    margin-left: 3px;
+    margin-right: 0;
 }
 
 .heatmap-day {
